@@ -1,0 +1,72 @@
+<app-user-navbar></app-user-navbar>
+<h3>To get your ticket please click on the download button:</h3>
+<div id="main">
+		<div class="ticket-main" id="ticket" #ticket>
+			<div class="ticket-top">
+			</div>
+
+			<div class="ticket-middle">
+
+				<div class="middle-row middle-1">
+					<span class="ticket-label middle-class">Bus Id</span>
+                    <span class="ticket-label middle-class">Bus Name</span>
+					<span class="ticket-label middle-type">Arriavl Station</span>
+					<span class="ticket-label middle-adult">Departure Station</span>
+					
+				</div>
+					<div *ngIf="busData" class="middle-row middle-1-1">
+                    <span class="ticket-detail-large middle-class">{{busData.BusId}}</span>
+                    
+					<span class="ticket-detail-large middle-class">{{busData.Name}}</span>
+                    
+					<span class="ticket-detail-large middle-type">{{busData.ArrivalStation}}</span>
+					<span class="ticket-detail-large middle-class middle-type">{{busData.DepartureStation}}</span>
+					
+					
+				</div>
+				<div  class="middle-row middle-2">
+					<span class="middle-railcard-spacer ticket-label">Arrival Date</span>
+					<span class="ticket-label middle-startdate">Arrival Time</span>
+				    <span class="ticket-label middle-number">Departure Date</span>
+                    <span class="ticket-label middle-number">Departure Time</span>
+				</div>
+				<div *ngIf="busData" class="middle-row middle-2-2">
+					<span class="ticket-detail middle-railcard-spacer">{{busData.ArrivalDate}}</span>
+					<span class="ticket-detail middle-startdate">{{busData.ArrivalTime}}</span>
+					<span class="ticket-detail middle-startdate">{{busData.DepartureDate}}</span>
+					<span class="ticket-detail middle-longnumber">{{busData.DepartureTime}}</span>
+				</div>
+				<div class="middle-row middle-3">
+					<span class="ticket-label middle-from">Passenger Name</span>
+					<span class="ticket-label middle-valid">Age</span>
+					<span class="ticket-label middle-valid">Gender</span>
+                    <span class="ticket-label middle-valid">Class</span>
+				</div>
+				<div *ngIf="pData"class="middle-row middle-3-3">
+					<span class="ticket-detail middle-from">{{pData.PName}}</span>
+					<span class="ticket-detail middle-valid">{{pData.Age}}</span>
+					<span class="ticket-detail middle-valid">{{pData.gender}}</span>
+                    <span class="ticket-detail middle-valid">{{pData.Class}}</span>
+				</div>
+				<div class="middle-row middle-4">
+					<span class="ticket-label middle-to">BookingId</span>
+					<span class="ticket-label middle-route">Seat Number</span>
+                    <span class="ticket-label middle-route">Fare</span>
+					
+				</div>
+				<div *ngIf="bookingData"class="middle-row middle-4-4">
+					<span class="ticket-detail middle-to">{{bookingData.BookingId}}</span>
+					<span class="ticket-detail middle-route">{{bookingData.SeatNum}}</span>
+					<span class="ticket-detail middle-route">{{bookingData.fare}}</span>
+				</div>
+			</div>
+
+			<div class="ticket-bottom">
+				<div class="ticket-logo-2-container">
+					<div class="ticket-logo"></div>
+				</div>
+				
+			</div>
+		</div>
+        <button class="btn btn-primary" (click)="Download()"> Download PDF</button>
+	</div>

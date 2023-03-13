@@ -1,0 +1,217 @@
+/* Font Loading */
+
+
+#main {
+	max-width: 960px;
+}
+
+span {
+	display: inline-block;
+}
+
+/* Sections of Ticket */
+
+.ticket-main {
+	width: 580px;
+	height: 368px;
+	font-family: Monaco;
+	
+	
+}
+h3{
+font-size:small;
+color: red;
+}
+.jumbotron{
+	background-color: black;
+}
+
+.ticket-top {
+	border-top-left-radius: 19px;
+	border-top-right-radius: 19px;
+	background-color:rgb(26, 103, 148);
+	height: 60px;
+}
+
+.ticket-middle {
+	position: relative;
+	background-color: rgb(157, 191, 214);
+	/* background-image: url('\src\assets\Images\Logo White.png');  */
+	height: 250px;
+	
+}
+
+.ticket-bottom {
+	border-bottom-left-radius: 19px;
+	border-bottom-right-radius: 19px;
+	background-color:rgb(26, 103, 148);
+	height: 68px;
+}
+
+/* Top Strip Positioning */
+
+/* stuff only goes here on advance tickets ("VALID ONLY WITH RESERVATION[S]") or on new style tickets ("Off-Peak Day Return") */
+
+/* Middle Area Positioning - 4 rows */
+
+.middle-row {
+	width: 93%;
+	width: 539px;
+	margin-left: 20.5px;
+	
+}
+
+.ticket-label {
+	font-size: 10px;
+	text-transform: none;
+}
+
+.ticket-detail {
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.ticket-detail-large {
+	font-size: 18px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.ticket-detail-small {
+	font-size: 10px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.middle-1 {
+	display: inline-block;
+	padding-top: 6px; /* Initial padding from top */
+}
+
+.middle-1-1 {
+	display: inline-block;
+	padding-bottom: 12px;
+}
+
+.middle-class {
+	width: 100px;
+}
+
+.middle-type {
+	width: 150px;
+}
+
+.middle-adult {
+	width: 76px;
+}
+
+.middle-child {
+	width: 91px;
+}
+
+
+
+.middle-2 {
+	display: inline-block;
+}
+
+.middle-2-2 {
+	display: inline-block;
+	padding-bottom: 22px; /* More padding between the two sets of rows */
+}
+
+.middle-railcard-spacer {
+	width: 150px;
+}
+
+.middle-startdate {
+	width: 150px;
+}
+
+.middle-number {
+	width: 114px;
+}
+
+.middle-longnumber {
+	text-align: right;
+	display: inline-block;
+	/* don't actually need to set a width here - need to right align this */
+}
+
+.middle-3 {
+	display: inline-block;
+}
+
+.middle-3-3 {
+	display: inline-block;
+	padding-bottom: 12px;
+}
+
+.middle-from {
+	width: 226px;
+}
+
+.middle-valid {
+	width: 90px;
+}
+
+
+
+.middle-4 {
+	display: inline-block;
+}
+
+.middle-4-4 {
+	display: inline-block;
+	padding-bottom: 12px;
+}
+
+.middle-to {
+	width: 226px;
+}
+
+.middle-route {
+	width: 156px;
+}
+
+
+
+/* Bottom Strip Positioning */
+
+.ticket-printed {
+	text-align: right;
+	margin-right: 20.5px;
+	margin-top: -16px; /* because margin-bottom doesn't work for some reason */
+}
+
+/* Logo Stuff */
+
+.ticket-logo-container {
+	padding-top: 12px;
+}
+
+.ticket-logo-2-container {
+	padding-top: 6px;
+}
+#main{
+    margin-left: 20px;
+	
+}
+.ticket-logo {
+/* 	background-image: url('./images/ticket-logo-2-small-transparent.png'); */
+	height: 55px;
+	width: 55px;
+	margin-left: 4.7%;
+}
+
+button{
+    margin-top: 4rem;
+    margin-left: 17rem;
+	align-items: center;
+	margin-bottom: 2rem;
+
+}
+#ticket{
+    margin-top: 0rem;
+    margin-left: 5rem;
+}

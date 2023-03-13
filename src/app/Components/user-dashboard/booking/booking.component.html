@@ -1,0 +1,79 @@
+<app-user-navbar></app-user-navbar>
+<div class="Jumbotron">
+<div class="container">
+   <h1>Booking Details</h1>
+    <div class="bus">
+        <h3>Bus Details:</h3>
+    </div>
+    <table class="table table-dark table-hover">
+        <thead class="table mt-4">
+            <tr>
+                <th>Name</th>
+                <th>Arrival Time</th>
+                <th>Departure Time</th>
+                <th>Arrival Date</th>
+                <th>Departure Date</th>
+                <th>Arrival Station</th>
+                <th>Departure Station</th>
+               
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngIf="busData" >
+                <td>{{busData.Name}}</td>
+                <td>{{busData.ArrivalTime}}</td>
+                <td>{{busData.DepartureTime}}</td>
+                <td>{{busData.ArrivalDate}}</td>
+                <td>{{busData.DepartureDate}}</td>
+                <td>{{busData.ArrivalStation}}</td>
+                <td>{{busData.DepartureStation}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="passenger">
+        <h3>Passenger Details:</h3>
+    </div>
+    <table class="table table-dark table-hover">
+        <thead class="table mt-4">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Class</th>
+               
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngIf="pData" >
+                <td>{{pData.PName}}</td>
+                <td>{{pData.Age}}</td>
+                <td>{{pData.gender}}</td>
+                <td>{{pData.Class}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="fare">
+        <h3>Fare Details</h3>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <!-- <th>Fare</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngIf="fare">
+                    <td>{{fare|currency:'INR':'symbol-narrow'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <span>*Please check all the details carefully before making final payment.</span>
+    <br>
+    <button (click)="payNow()" class="btn btn-primary">PayNow</button>
+    
+</div>
+</div>

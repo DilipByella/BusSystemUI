@@ -1,0 +1,74 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="jumbotron">
+<div class="container">
+    <form [formGroup]="formValue">
+        <div style="width: 50rem;" class="form-group">
+            <br>
+            <select formControlName="BusId" class="form-control">  
+              <option disabled>Select Bus</option>  
+              <option> Enter Bus Details</option>  
+              <option  *ngFor="let row of busdata">{{row.BusId}} {{row.Name}} -- {{row.DepartureStation}} To {{row.ArrivalStation}}</option>  
+          </select> 
+          </div>
+        
+        <div  class="form-group" >
+                       
+            <mat-form-field class="MatFormFieldControl" appearance="fill">
+                    
+                <select matNativeControl required  formControlName="Status" >
+                    <option  label="--Select Status --"></option>
+                    <option  value="All">ALL</option>
+                  <option value="CONFIRM" >Confirm</option>
+                  <option value="Pending">Pending</option>
+                  <option value="CANCELLED" >Cancelled</option>                     
+                  
+                </select>
+              </mat-form-field>
+              <button class="btn btn-primary" (click)="SearchPassenger()" >Search</button>
+              <button class="btn btn-info" style="margin-left:0.4rem" (click)="Download()"> Download Report</button>
+        </div>
+       
+      </form>
+</div>
+<div class="table-div" style="margin-left:17rem">
+<table class="table table-dark table-hover" id="report" #report *ngIf="reportData" >
+    <thead>
+        <tr>
+            <th>PassengerId</th>
+            
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Class</th>
+            <th>BookingId</th>
+            <th>fare</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>SeatNum</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr class="tbody" *ngFor="let row of reportData | paginate: { itemsPerPage: 5, currentPage: page, totalItems:totalLength }" >
+            <td>{{row.PassengerId}}</td>
+            <td>{{row.PName}}</td>
+            <td>{{row.Age}}</td>
+            <td>{{row.gender}}</td>
+            <td>{{row.Class}}</td>
+            <td>{{row.BookingId}}</td>
+            <td>{{row.fare}}</td>
+            <td>{{row.Date}}</td>
+            <td>{{row.Status}}</td>
+            <td>{{row.SeatNum}}</td>
+            
+        </tr>
+       
+    </tbody>
+ 
+    
+</table>
+
+</div>
+<pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>
+<br>
+</div>
+

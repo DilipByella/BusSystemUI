@@ -1,0 +1,94 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="jumbotron">
+<div class="container">
+    <h2><b>Seat Details.</b></h2>
+    
+    <button class="btn btn-success" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModalCenter" (click)="clickAddSeat()"><mat-icon>library_add</mat-icon> Add Seats</button>
+    <br>
+    <br>
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Seat Id</th>
+                <th>Bus Id</th>
+                <th>FirstAC</th>
+                <th>SecondAC</th>
+                <th>Sleeper</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+         <tbody>
+            <tr *ngFor="let row of seatData" >
+                <td>{{row.SeatId}}</td>
+                <td>{{row.BusId}}</td>
+                <td>{{row.FirstAC}}</td>
+                <td>{{row.SecondAC}}</td>
+                <td>{{row.Sleeper}}</td>
+                <td>{{row.Total}}</td>
+                
+                <td>
+                  <button (click)="onEdit(row)" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModalCenter" class="btn btn-danger"><mat-icon>edit</mat-icon> Edit</button>
+                  
+                </td>
+            </tr>
+        </tbody> 
+    </table> 
+
+</div>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+           
+          <h5  class="modal-title" id="exampleModalLongTitle">Update Seat</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue">
+
+              <div class="form-group">
+                <label for="exampleInputEmail1">BusId</label>
+                    <input type="text" class="form-control" id="BusId"  placeholder="BusId" formControlName="BusId">
+    
+                </div>
+                
+                <div class="form-group">
+                <label for="exampleInputEmail1">FirstAC</label>
+                    <input type="text" class="form-control" id="FirstAC"  placeholder="FirstAC" formControlName="FirstAC">
+    
+                </div>
+
+                <div class="form-group">
+                <label for="exampleInputEmail1">SecondAC</label>
+                    <input type="text" class="form-control" id="SecondAC"  placeholder="SecondAC" formControlName="SecondAC">
+    
+                </div>
+
+                <div class="form-group">
+                <label for="exampleInputEmail1">Sleeper</label>
+                    <input type="text" class="form-control" id="Sleeper"  placeholder="Sleeper" formControlName="Sleeper">
+    
+                </div>
+
+                <div class="form-group">
+                <label for="exampleInputEmail1">Total</label>
+                    <input type="text" class="form-control" id="Total"  placeholder="Total" formControlName="Total">
+    
+                </div>
+               
+
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button id="cancel" type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+          <button *ngIf="showAdd" (click)="postSeatDetails()"type="button" class="btn btn-success">Save </button>
+          <button *ngIf="showUpdate" (click)="updateSeat()"type="button" class="btn btn-success">Update </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

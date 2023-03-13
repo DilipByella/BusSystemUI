@@ -1,0 +1,15 @@
+/* .container{
+    margin-top: 20px;
+} */
+.btn-danger{
+    width: 7rem;
+    height: 2.5rem;
+}
+.jumbotron{
+    background-color: black;
+    padding-bottom: 5rem;
+}
+h2{
+    color: aliceblue;
+    font-size:xx-large;
+}

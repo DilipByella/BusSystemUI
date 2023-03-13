@@ -1,0 +1,23 @@
+button{
+    margin-top: 10px;
+    border: none;
+   
+    text-emphasis: 5px;
+    border-radius: 8px;
+    width: 5rem;
+}
+input{
+    width:25rem;
+    background-color: aliceblue;
+    margin-bottom: 2rem;
+    
+}
+.jumbotron{
+    background-color: black;
+    padding-bottom: 5rem;
+}
+.table{
+    width: 1200px;
+    margin-left: 5rem;
+    margin-top: 1rem;
+}

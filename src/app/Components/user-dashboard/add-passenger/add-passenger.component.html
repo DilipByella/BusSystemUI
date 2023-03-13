@@ -1,0 +1,54 @@
+<app-user-navbar></app-user-navbar>
+<div class="jumbotron">
+<div class="container">
+  <br>
+    <h3>Add Passenger Details:</h3>
+    <form [formGroup]="formValue" (ngSubmit)="addPassenger()">
+
+        <div class="form-control">
+            <div *ngIf="pName?.touched && pName?.invalid" >
+                <span>Name is required.</span></div>
+            <input formControlName="pName" type="text" id="pName" class="form-control "
+              placeholder="Enter a  Name " />
+          
+        </div>
+
+          <div class="form-control">
+            <div *ngIf="age?.touched && age?.invalid" >
+                <span>Age is required.</span></div>
+             
+            <input formControlName="age" type="text" id="age" class="form-control "
+                  placeholder="Enter age" />
+          </div>
+
+          <div class="form-control">
+         
+            <label class="md-check">
+                <input type="radio" value="female" name="gender" formControlName="gender">
+                Female
+              </label>
+              <br/>
+              <label class="md-check">
+                <input type="radio" value="male" name="gender" formControlName="gender">     
+                Male
+              </label>
+                
+            </div>
+
+            <div  class="form-control" >
+                <mat-form-field class="MatFormFieldControl" appearance="fill">
+                    
+                    <select matNativeControl required  formControlName="class" >
+                        <option label="--select something --"></option>
+                      <option value="FirstAC" >FirstAC</option>
+                      <option value="SecondAC">SecondAC</option>
+                      <option value="Sleeper" >Sleeper</option>                     
+                      
+                    </select>
+                  </mat-form-field>
+                </div>
+        
+            <button class="btn btn-primary" [disabled]="!formValue.valid">Submit</button>
+        </form>
+</div>
+</div>

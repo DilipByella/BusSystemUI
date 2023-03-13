@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<section class="section-login">
+  <form >
+    <div class="container">
+      <div class="form-container">
+  
+        <form class="form"  [formGroup]="SignUpform" (ngSubmit)="onSubmit()">
+
+
+          <div class="form-control">
+            <div *ngIf="name?.touched && name?.invalid" >
+              <span>Username is required.</span></div>
+            <input formControlName="name" type="text" id="name" class="form-control form-control-lg"
+              placeholder="Name" />
+                      
+          </div>
+
+          <div class="form-control">
+            <div *ngIf="email?.invalid && email?.touched" >
+              <span>Email is invalid.</span></div>
+            <input formControlName="email" type="email" id="email" class="form-control form-control-lg"
+              placeholder="Enter a valid email address" />
+                   
+          </div>
+
+
+          <div class="form-control">
+            <div *ngIf="mobile?.touched && mobile?.invalid" >
+              <span>Enter valid 10-digit mobile number.</span></div>
+              <input formControlName="mobile" type="text" id="mobile" class="form-control form-control-lg"
+                placeholder="Enter your mobile Number" />
+                           
+            </div>
+
+
+            <div class="form-control">
+              <div *ngIf="address?.touched && address?.invalid" >
+                <span>Address is required.</span>
+              </div>
+                <input formControlName="address" type="text" id="address" class="form-control form-control-lg"
+                  placeholder="Enter your address" />
+           </div>
+
+              <div class="form-control ">
+                <div *ngIf="password?.touched && password?.invalid" >
+                  <span>Password is required.</span>
+                </div>
+                <input formControlName="password" type="password" id="password" class="form-control form-control-lg"
+                  placeholder="Enter password" />
+              </div>
+
+
+          <button class="btn btn-login" type="submit" [disabled]="!SignUpform.valid">Register</button>
+        </form>
+  
+        
+      </div>
+    </div>
+  </form>
+  </section>

@@ -1,0 +1,44 @@
+<app-user-navbar></app-user-navbar>
+<div class="jumbotron">
+<div class="container">
+    <h2><b>Booking History.</b></h2>
+    
+    
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th>Booking Id</th>
+                <th>Bus Id</th>
+                <th>UserId</th>
+                <th>Classes</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>SeatNum</th>
+                <th>PassengerId</th>
+                <th>Fare</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let row of  booking | paginate: { itemsPerPage: 5, currentPage: page, totalItems:totalLength }" >
+                <td>{{row.BookingId}}</td>
+                <td>{{row.BusId}}</td>
+                <td>{{row.UserId}}</td>
+                <td>{{row.Classes}}</td>
+                <td>{{row.Date}}</td>
+                <td>{{row.Status}}</td>
+                <td>{{row.SeatNum}}</td>
+                <td>{{row.PassengerId}}</td>
+                <td>{{row.fare}}</td>
+                <td>
+                    <a class="gt" (click)="GetTickect(row.PassengerId,row.BookingId,row.BusId)" >Get Ticket</a>
+                    <button class="btn btn-success" (click)="payment(row.PassengerId)">Payment</button>
+                    <button (click)="deleteBooking(row.PassengerId)" class="btn btn-danger"><mat-icon>cancel</mat-icon></button>
+                </td>
+            </tr>
+        </tbody>
+    </table> 
+  
+  </div>
+  <pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>
+</div>

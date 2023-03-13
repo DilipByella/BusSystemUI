@@ -1,0 +1,72 @@
+<app-user-navbar></app-user-navbar>
+<div class="jumbotron">
+<div class="container">
+    <br>
+    <form [formGroup]="formValue">
+        <div style="width: 50rem;" class="form-group">
+            
+            <select formControlName="ArrivalStation" class="form-control">  
+              <option disabled>Select Arrival Station</option>  
+              <option> Arrival Station</option>  
+              <option  *ngFor="let row of busdata">{{row.ArrivalStation}}</option>  
+          </select> 
+          </div>
+          <br>
+          <div style="width: 50rem;" class="form-group">
+              <select formControlName="DepartureStation" class="form-control">  
+                <option disabled>Select Departure Station</option>  
+                <option> Departure Station</option>  
+                <option  *ngFor="let row of busdata">{{row.DepartureStation}}</option>  
+            </select> 
+            </div>
+            <br>
+        <div class="form-group">
+        <!-- <label for="exampleInputEmail1"></label> -->
+            <input type="date" class="form-control" id="Date"  placeholder="Date" formControlName="Date">
+
+        </div>
+        <button class="btn btn-primary" (click)="SearchBus()" >Search</button>
+      </form>
+</div>
+
+<table class="table table-dark table-hover" *ngIf="busData">
+    <thead>
+        <tr>
+            <th>Bus Id</th>
+            
+            <th>Name</th>
+            <th>Arrival Time</th>
+            <th>Departure Time</th>
+            <th>Arrival Date</th>
+            <th>Departure Date</th>
+            <th>Arrival Station</th>
+            <th>Departure Station</th>
+            <th>FirstAC</th>
+            <th>SecondAC</th>
+            <th>Sleeper</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr class="tbody" *ngFor="let row of busData" >
+            <td>{{row.BusId}}</td>
+            <td>{{row.Name}}</td>
+            <td>{{row.ArrivalTime}}</td>
+            <td>{{row.DepartureTime}}</td>
+            <td>{{row.ArrivalDate}}</td>
+            <td>{{row.DepartureDate}}</td>
+            <td>{{row.ArrivalStation}}</td>
+            <td>{{row.DepartureStation}}</td>
+            <td>{{row.FirstAC}}</td>
+            <td>{{row.SecondAC}}</td>
+            <td>{{row.Sleeper}}</td>
+            <td>
+                <button class="btn btn-primary" (click)="GetBusById(row.BusId)">Book Now</button>
+            </td>
+        </tr>
+       
+    </tbody>
+    
+    
+</table>
+</div>

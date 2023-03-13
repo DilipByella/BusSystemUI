@@ -1,0 +1,23 @@
+button{
+    height: 2.5rem;
+    width: 3.5rem;
+}
+.gt{
+    color: rgb(47, 163, 218);
+    text-decoration: underline;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.jumbotron{
+    background-color: black;
+    padding-bottom: 3rem;
+}
+h2{
+    font-size: xx-large;
+    color: antiquewhite;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+.btn-danger{
+    width: 7rem;
+}

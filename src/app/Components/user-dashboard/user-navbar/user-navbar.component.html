@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+    <img class="logo" src="assets\Images\Logo White.png" width="55" height="55" >
+    <a class="navbar-brand"  font routerLink="/login/user/dashboard">HAPPYJOURNEY</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="userDetails">
+      <ul class="navbar-nav ms-auto text-center">
+        <li class="nav-item active">
+          <a class="nav-link" >Hello {{userDetails.Name}},</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="onLogout()">Logout</a>
+        </li>
+      </ul>
+        </div>
+  </nav>

@@ -1,0 +1,61 @@
+<app-user-navbar></app-user-navbar>
+<div class="container">
+    <form class="form"  [formGroup]="TransactionForm" (ngSubmit)="PayNow()">
+        <h2>TRANSACTION</h2>
+    
+        <img src="data:image/png;base64,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">
+        
+        <img src="https://us.123rf.com/450wm/rvlsoft/rvlsoft1504/rvlsoft150400014/39070363-kiev-ukraine-march-21-2015-mastercard-logo-printed-on-paper-and-placed-on-white-background-mastercar.jpg?ver=6"><br/>
+            <label>CARD NUMBER</label>
+            <div class="form-control">
+                <div *ngIf="number?.touched && number?.invalid" >
+                  <span>Card Number is required.</span></div>
+            <input type="text" class="form-control" id="card-number"  placeholder="Enter you Card Number" formControlName="number">
+            </div>
+            
+           
+              <label>CVV </label>
+              <br>
+              <div class="form-control">
+                <div *ngIf="cvv?.touched && cvv?.invalid" >
+                  <span>Enter valid cvv.</span></div>
+              <input type="password" id="cvv" placeholder="Enter CVV" formControlName="cvv"><br/>
+              </div>
+               
+              <label>EXPIRY DATE</label>
+              <br>
+              <mat-form-field  appearance="fill"><br/>
+                <label>Month</label>
+                    <select matNativeControl required  >
+                        <option label="--MONTH --"></option>
+                        <option >January</option>
+                        <option>February</option>
+                        <option >March</option>
+                        <option >April</option>
+                        <option >May</option>  
+                        <option >June</option>
+                        <option >July</option>
+                        <option >August</option>
+                        <option >Spetember</option>
+                        <option >October</option>
+                        <option >November</option>
+                        <option >December</option>                     
+          
+                    </select>
+            </mat-form-field>
+            <mat-form-field appearance="fill"><br/>
+                <label>Year</label>
+                <select matNativeControl required  >
+                    <option label="--YEAR --"></option>
+                    <option>2022</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>                       
+          
+                 </select>
+            </mat-form-field><br/>
+             
+        <button *ngIf="farebtn" class="btn btn-success" style="margin-left: 11rem" [disabled]="!TransactionForm.valid" >Pay {{farebtn | number:'1.0-2'}}</button>
+    </form>
+    </div>

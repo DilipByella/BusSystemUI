@@ -1,0 +1,12 @@
+.logo {
+    margin-left: 2.5rem;
+}
+.navbar-brand {
+margin-left: 0rem;
+text-decoration: solid;
+}
+a {
+    font-size:large;
+    font-style: italic;
+}
+

@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<section class="section-login">
+    <div class="container">
+      <div class="form-container">
+  
+        
+        <form class="form" [formGroup]="LoginForm" (ngSubmit)="onSubmit()">
+
+
+
+          <div class="form-control">
+            <div *ngIf="email?.invalid && email?.touched" >
+              <span>Email is invalid.</span></div>
+            <input formControlName="email" type="email" id="email" class="form-control form-control-lg"
+              placeholder="Enter a valid email address" />
+          </div>
+
+
+          <div class="form-control">
+            <div *ngIf="password?.touched && password?.invalid" >
+              <span>Password is required.</span>
+            </div>
+            <input formControlName="password" type="password" id="password" class="form-control form-control-lg"
+                  placeholder="Enter password" />
+          </div>
+
+          
+          <button class="btn btn-login" type="submit">Log In</button>
+        </form>
+  
+        <div class="sign-up">
+          <h2 class="text">Don't have an Account?</h2>
+          <button class="btn btn-sign-up" routerLink="/signup">Sign Up</button>
+        </div>
+  
+      </div>
+    </div>
+  </section>
